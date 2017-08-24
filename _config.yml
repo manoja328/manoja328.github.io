@@ -2,7 +2,7 @@ title: Manoja328.github.io
 description: Helllooo
 google_analytics: 
 show_downloads: true
-theme: jekyll-theme-cayman
+theme: jekyll-theme-minimal
 
 gems:
   - jekyll-mentions
