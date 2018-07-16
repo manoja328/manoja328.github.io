@@ -25,13 +25,12 @@ body {
 <title>tallyqa</title>
 <h2><center>TallyQA: Answering Complex Counting Questions</center> </h2>
 <div >
-Recently computer vision has begun to develop algorithms for open-ended counting. These systems take in a counting question and an image and predict a whole number that answers the question. While object recognition systems now rival humans, today’s best open-ended counting systems perform poorly. This could be due to an inability to detect the correct objects or due to an inability to reason about them. To address this, we distinguish between simple and complex counting questions. Simple counting questions only require object detection, e.g., “How many dogs are there?” Complex questions require deeper analysis, e.g., “How many dogs are eating?”. <br><br>
+Computer vision has begun to develop algorithms for open-ended counting. These systems take in a "How many...?" question and an image and predict a whole number that answers the question. While object recognition systems now rival humans, today's best open-ended counting systems perform poorly. This could be due to an inability to detect the correct objects or due to an inability to reason about them. To address this, we distinguish between simple and complex counting questions. Simple counting questions only require object detection, e.g., “How many dogs are there?” Complex questions require deeper analysis, e.g., “How many dogs are eating?”. <br><br>
 
-Majority of counting questions in Visual Question Answering (VQA) datasets such as VQA1.0 , VQA2.0, TDIUC, etc. are simple and can be easily answered using an object detector.  Complex counting questions involve understanding relationships between objects along with their attributes and require more reasoning . Thus, performance of counting models can only be truly evaluated based on perfromance on complex couting questions. So, we have developed TallyQA dataset that has both simple and complex questions. TallyQA is also the largest counting dataset to our knowledge, having 287,907 questions and  165,443 images. To get the best quality questions, we collected 19.5K complex questions using Amazon Mechanical Turk(AMT).<br><br>
+Most counting questions in Visual Question Answering (VQA) datasets (e.g., VQA 1.0 , VQA 2.0, and TDIUC) are simple and can be easily answered using an object detector. Complex counting questions involve understanding relationships between objects along with their attributes and require more reasoning. Thus, performance of counting models cannot be estimated on complex counting questions using these datasets. To address this, we created the TallyQA dataset that has both simple and complex questions. TallyQA is the largest counting dataset to our knowledge, having 287,907 questions and 165,443 images. To get the best quality questions, we collected 19.5K complex questions using Amazon Mechanical Turk (AMT).<br><br>
 
 
- For learning to count we propose the relational counting network (RCN), a new algorithm for counting that infers relationships between objects and background image regions. It is inspired by relation networks, with modifications to handle a dynamic number of image regions and to explicitly incorporate background information. 
-
+ For learning to count we propose the relational counting network (RCN), a new algorithm for counting that infers relationships between objects and background image regions. It is inspired by relation networks, with modifications to handle a dynamic number of image regions and to explicitly incorporate background information.
 
     
     
@@ -41,12 +40,12 @@ Our RCN model computes the relationship between foreground regions as well as th
     
 </div>
     
-<h3>Paper and dataset download links will be released soon...</h3>
+<h3>Paper and dataset download links will be released Fall 2018.</h3>
 
 
 
 <h2>Contact</h2>
-Please feel free to contact about any question regarding the dataset.<br><br>
+<br>
 
 
                 <div class="row">
