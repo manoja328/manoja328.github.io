@@ -1,0 +1,25 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: Manoj Acharya's Blog
+email:
+description: "What I struggle with daily."
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://manojacharya.com" # the base hostname & protocol for your site
+twitter_username: manoja328	
+github_username:  manoja328
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+highlighter: rouge
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
