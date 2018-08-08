@@ -2,7 +2,7 @@
 layout: post
 title:  "Welcome"
 date:   2018-05-07 15:19:37 -0400
-categories: welcome
+categories: jupyter-notebook
 ---
 
 
