@@ -48,4 +48,4 @@ plt.legend();
 ```
 
 
-![png](output_4_0.png)
+![png](/assets/output_4_0.png)
