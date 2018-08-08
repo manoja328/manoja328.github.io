@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Welcome"
+title:  "jupyter-notebook"
 date:   2018-05-07 15:19:37 -0400
 categories: jupyter-notebook
 ---
