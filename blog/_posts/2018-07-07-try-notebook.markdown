@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "jupyter-notebook"
+excerpt: show jupyter notebook using markdown
 date:   2018-05-07 15:19:37 -0400
 categories: jupyter-notebook
 ---
