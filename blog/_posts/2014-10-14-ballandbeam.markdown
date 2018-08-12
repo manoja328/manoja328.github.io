@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "jupyter-notebook"
+title:  "ball and beam system"
 excerpt: ball and beam system with real-time image processing
 date:   2014-10-14 19:26:37 +0545
 categories: hardware 
@@ -12,6 +12,13 @@ in motion at any position of the beam desired by the user.Now there are various 
 some use potentiometer converted to a distance (by doing ADC mapping) etc. We used a simple hand gesture to set the ball's
 position on the beam which is found out using image processing. We take a colored ball and using HSV threshold and 
 some "moments" calculation we find the center of the ball.
+
+
+
+![png](/assets/ballbeam/thr.png)
+
+![png](/assets/ballbeam/2.png)
+
 
 My setup had following things:
 
@@ -29,7 +36,7 @@ to move, which is determined by calculating the position of ball and  the setpoi
 control feedback to the whole system. All the PIC does is change that angle into appropriate electrical signal to drive
 the servo meter.
 
-Video link: https://www.youtube.com/watch?v=cayVlMbv05g&feature=youtu.be%20
+[Video link](https://www.youtube.com/watch?v=cayVlMbv05g&feature=youtu.be%20)
 
-Code ( python + PIC) :https://drive.google.com/file/d/0B3wAJh9-HvDcM1NaRmt2VVlOZlU/view?usp=sharing
+[Code](https://drive.google.com/file/d/0B3wAJh9-HvDcM1NaRmt2VVlOZlU/view?usp=sharing)
 
