@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "jupyter-notebook"
-excerpt: show jupyter notebook using markdown
+excerpt: ball and beam system with real-time image processing
 date:   2014-10-14 19:26:37 +0545
 categories: hardware 
 ---
