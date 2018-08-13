@@ -2,6 +2,7 @@
 layout: post
 title:  "ball and beam system"
 excerpt: ball and beam system with real-time image processing
+comments: true
 date:   2014-10-14 19:26:37 +0545
 categories: hardware 
 ---
