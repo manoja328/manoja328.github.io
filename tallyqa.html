@@ -27,15 +27,20 @@ body {
 <div >
 Computer vision has begun to develop algorithms for open-ended counting. These systems take in a "How many...?" question and an image and predict a whole number that answers the question. While object recognition systems now rival humans, today's best open-ended counting systems perform poorly. This could be due to an inability to detect the correct objects or due to an inability to reason about them. To address this, we distinguish between simple and complex counting questions. Simple counting questions only require object detection, e.g., “How many dogs are there?” Complex questions require deeper analysis, e.g., “How many dogs are eating?”. <br><br>
 
-Most counting questions in Visual Question Answering (VQA) datasets (e.g., VQA 1.0 , VQA 2.0, and TDIUC) are simple and can be easily answered using an object detector. Complex counting questions involve understanding relationships between objects along with their attributes and require more reasoning. Thus, performance of counting models cannot be estimated on complex counting questions using these datasets. To address this, we created the TallyQA dataset that has both simple and complex questions. TallyQA is the largest counting dataset to our knowledge, having 287,907 questions and 165,443 images. To get the best quality questions, we collected 19.5K complex questions using Amazon Mechanical Turk (AMT).<br><br>
+Most counting questions in Visual Question Answering (VQA) datasets (e.g., VQA 1.0 , VQA 2.0, and TDIUC) are simple and can be easily answered using an object detector. Complex counting questions involve understanding relationships between objects along with their attributes and require more reasoning. Thus, performance of counting models cannot be estimated on complex counting questions using these datasets. To address this, we created the TallyQA dataset that has both <b>simple</b> and <b>complex</b> questions.
 
-    TallyQA has both simple counting questions that require only object detection and complex counting questions that demand more, as shown by the example image below. 
+   Simple counting questions are those which require only object detection whereas complex counting questions demand more, as shown by the example image below. 
 <img src="https://raw.githubusercontent.com/manoja328/manoja328.github.io/master/simp_comp.jpg" class="img-responsive center-block"> <br>
-    
+<h2>TallyQA Stats</h2>
+TallyQA is the largest counting dataset to our knowledge. It also the only dataset to have distinction between simple and complex counting questions. In summary, it has
+<ul>
+    <li>287,907 Question-Answer pairs</li>
+    <li>165,443 Images</li>
+    <li>19.5K complex QA pairs collected from human annotators using AMT</li>
+</ul>        
 </div>
     
-<h3>Paper and dataset download links will be released in Fall 2018.</h3>
-
+<h3>Paper link and dataset usage instructions are provided in this        <a href="https://github.com/manoja328/tallyqa">github repo</a>.</h3>
 
 
 <h2>Contact</h2>
