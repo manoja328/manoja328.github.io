@@ -18,6 +18,8 @@ currenlty not well equipped to know how to say "this object is not similar to an
 
 ![png](/assets/dogg.jpg)
 
-The train dataset will be released soon while the *test dataset will not be released* immediately. Instead, participants
+The train dataset will be released soon while the *test dataset will not be released* immediately for fair evaluation. Instead, participants
 will be provided an online evaluation page where they can submit their predicitions and we will provide them the evalauation
-results. More on the datsets and baselines will be release soon!!
+results.
+
+## More on the datsets and baselines will be released soon!!
