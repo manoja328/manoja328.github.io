@@ -59,3 +59,20 @@ hr{
     height: 2px;
     background: #ccc;
 }
+
+
+a { color: #267CB9; text-decoration: none; }
+
+a.code { color: #1D8A4D; text-decoration: none; font-size:11px}
+
+a.ppl { color: #727272; text-decoration: none; }
+
+a:hover, a:focus { color: #069; font-weight: bold; }
+
+a.code:hover, a.code:focus { color: #135B33; font-weight: bold; }
+
+a.ppl:hover, a.ppl:focus { color: #727272; font-style: italic; }
+
+a small { font-size: 11px; color: #777; margin-top: -0.3em; display: block; }
+
+a:hover small { color: #777; }
