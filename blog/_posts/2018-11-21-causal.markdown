@@ -7,8 +7,6 @@ date:   2018-11-21 19:26:37 +0545
 categories: blog 
 ---
 
-What does it mean to have causaliyt in ML models ?
-
 The main context is that current ML models although seeem to be doing very well across many tasks however, do not
 have any mechanisms to explain why they are taking those decisision. Are they just complex  mathematical systems that
 somehow  learn to capture patterns from data? This also leads to a very natural question: why do these systems fail 
