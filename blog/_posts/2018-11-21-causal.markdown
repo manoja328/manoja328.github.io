@@ -1,0 +1,26 @@
+---
+layout: post
+title:  "What does it mean to have causal models?"
+excerpt: causality
+comments: true
+date:   2018-11-21 19:26:37 +0545
+categories: blog 
+---
+
+What does it mean to have causaliyt in ML models ?
+
+The main context is that current ML models although seeem to be doing very well across many tasks however, do not
+have any mechanisms to explain why they are taking those decisision. Are they just complex  mathematical systems that
+somehow  learn to capture patterns from data? This also leads to a very natural question: why do these systems fail 
+spectaculary in unfamiliar circumsatances or situations it has not encountered during training ?. Clever way of fooling 
+Neural Networks ( and other types of model ) using adversarial examples cast more doubts wheter these models have truly 
+generalized / learned the hidden meaning in datas rather than superficial correlations. 
+
+However, in the same context we humans are very good at adapting to unseen scenarios. We are good at  making decisions 
+based on our intiutions which is probably shaped by our own experinces, imagination or even learned from others. In a way,
+we can somehow explain why we do certain things or at least make an informed guess. 
+
+Learning links:
+
+https://en.wikipedia.org/wiki/Causal_reasoning
+
