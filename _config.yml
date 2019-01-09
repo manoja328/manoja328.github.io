@@ -10,7 +10,7 @@ title: Manoj Acharya's Blog
 email:
 description: "What I struggle with daily."
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://manojacharya.com" # the base hostname & protocol for your site
+url: "manojacharya.com" # the base hostname & protocol for your site
 twitter_username: manoja328	
 github_username:  manoja328
 
