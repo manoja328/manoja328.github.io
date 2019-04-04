@@ -1,0 +1,93 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,500,700|Crete+Round" rel="stylesheet" type="text/css">
+<meta charset="UTF-8">
+    
+    <style>
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    width: 800px;
+    color: #333;
+    margin: auto;
+}
+        
+        div {
+    text-align: justify;
+    text-justify: inter-word;
+}
+        
+</style>
+    
+</head>
+<body>
+<title>VQD</title>
+<h2><center>VQD: Visual Query Detection for Natural Scenes</center> </h2>
+
+<div>
+
+    <img src="https://raw.githubusercontent.com/manoja328/manoja328.github.io/master/assets/vqd.png" class="img-responsive center-block" height="500" width="700">     
+    
+We introduce the Visual Query Detection (VQD) task in which given a query in natural language and an image the system  must produce <b>0 - N boxes</b> that satisfy that query. Unlike VQD, object detection cannot deal with attributes and relations. In VQA, often algorithms produce the right answers due to dataset bias without `looking' at relevant image regions. Referrring Expression Recognition (RER) datasets have short and often ambiguous prompts, and by having only a single box as an output, they make it easier to exploit dataset biases. VQD requires goal-directed object detection and outputting a variable number of boxes that answer a query.<br><br>
+    Our dataset is called <b>VQDv1 the first dataset for VQD</b>. VQDv1 is created synthetically using annotations from Visual Genome (VG), COCO, and COCO Panoptic. While this limits variety, it helps combat some kinds of bias and serves as an initial version of the dataset. VQDv1 has three distinct query categories: 
+    <ul>
+    <li>Object Presence (e.g., `Show the dog in the image')</li>
+    <li>Color Reasoning (e.g., `Which plate is white in color?')</li>
+    <li>Positional Reasoning (e.g., `Show the cylinder behind the girl in the picture')</li>
+</ul>  
+  Some example images from our dataset are given below.    
+<img src="https://raw.githubusercontent.com/manoja328/manoja328.github.io/master/assets/dvqa_example.png" class="img-responsive center-block" height="500" width="700"> 
+    
+    <h2>VQDv1 Stats</h2>
+    Compared to other dataset VQD has the <b>largest number of questions.</b> and the number of bounding boxes range from 0-N. In summary, it has
+<ul>
+    <li>621K Questions:</li>
+    <ul>
+        <li>391K Simple Questions</li>
+        <li>172K Color Questions</li>
+        <li>58K Positional Questions</li>
+    </ul>
+    <li>123K Images</li>
+
+</ul>        
+</div>
+    
+
+<h3><a href="https://arxiv.org/abs/1810.12440">Click to read about VQD in our NAACL-2019 paper.</a></h3>
+
+
+<h3>The TallyQA dataset can be obtained from  <a href="https://github.com/manoja328/VQD_dataset">our Github repo</a>.</h3>
+
+
+                <div class="row">
+                    
+   <div class="col-md-4 text-center">
+        <a href="http://www.manojacharya.com/" target="_blank"><img src="https://raw.githubusercontent.com/manoja328/manoja328.github.io/master/profile-pic.jpeg" class="img-circle center-block " alt="Manoj Acharya" height="200" ></a>
+                            <a href="http://www.manojacharya.com/"><h3>Manoj Acharya</h3></a>
+
+
+      </div>
+                    
+                    
+                    
+    <div class="col-md-4  text-center">
+        <a href="https://www.linkedin.com/in/karankjariwala" target="_blank"><img src="https://avatars0.githubusercontent.com/u/12561286?s=400&v=4" class="img-circle center-block " alt="Karan Jariwala" height="200"></a>
+                            <a href="https://www.linkedin.com/in/karankjariwala"><h3>Karan Jariwala</h3></a>
+
+
+      </div>
+ 
+
+                    
+     <div class="col-md-4  text-center">        
+<a href="http://chriskanan.com" target="_blank"><img src="https://kushalkafle.com/images/chris-rit.jpg" class="img-circle center-block" alt="Prof. Christopher Kanan" height="200">
+        <h3>Christopher Kanan</h3></a>
+                          
+						  
+      </div>
+    </div>
+
+    </body>
+</html>
+    
