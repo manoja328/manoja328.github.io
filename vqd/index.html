@@ -29,8 +29,9 @@ body {
 
     <img src="https://raw.githubusercontent.com/manoja328/manoja328.github.io/master/assets/vqd.png" class="img-responsive center-block" height="500" width="700">     
     
-We introduce the Visual Query Detection (VQD) task in which given a query in natural language and an image the system  must produce <b>0 - N boxes</b> that satisfy that query. Unlike VQD, object detection cannot deal with attributes and relations. In VQA, often algorithms produce the right answers due to dataset bias without `looking' at relevant image regions. Referrring Expression Recognition (RER) datasets have short and often ambiguous prompts, and by having only a single box as an output, they make it easier to exploit dataset biases. VQD requires goal-directed object detection and outputting a variable number of boxes that answer a query.<br><br>
-    Our dataset is called <b>VQDv1 the first dataset for VQD</b>. VQDv1 is created synthetically using annotations from Visual Genome (VG), COCO, and COCO Panoptic. While this limits variety, it helps combat some kinds of bias and serves as an initial version of the dataset. VQDv1 has three distinct query categories: 
+We introduce the Visual Query Detection (VQD) task in which given a query in natural language and an image the system  must produce <b>0 - N boxes</b> that satisfy that query. VQD is related to several other tasks in computer vision, but it captures abilities these other tasks ignore. Unlike object detection, VQD can deal with attributes and relations among objects in the scene. In VQA, often algorithms produce the right answers due to dataset bias without `looking' at relevant image regions. Referrring Expression Recognition (RER) datasets have short and often ambiguous prompts, and by having only a single box as an output, they make it easier to exploit dataset biases. VQD requires goal-directed object detection and outputting a variable number of boxes that answer a query.<br><br>
+<h3>The TallyQA dataset can be obtained from  <a href="https://github.com/manoja328/VQD_dataset">our Github repo</a>.</h3><br>
+	We created <b>VQDv1 the first dataset for VQD</b>. VQDv1 has three distinct query categories: 
     <ul>
     <li>Object Presence (e.g., `Show the dog in the image')</li>
     <li>Color Reasoning (e.g., `Which plate is white in color?')</li>
@@ -55,11 +56,6 @@ We introduce the Visual Query Detection (VQD) task in which given a query in nat
     
 
 <h3><a href="https://arxiv.org/abs/1904.02794">Click to read about VQD in our NAACL-2019 paper.</a></h3>
-
-
-<h3>The TallyQA dataset can be obtained from  <a href="https://github.com/manoja328/VQD_dataset">our Github repo</a>.</h3>
-
-
                 <div class="row">
                     
    <div class="col-md-4 text-center">
