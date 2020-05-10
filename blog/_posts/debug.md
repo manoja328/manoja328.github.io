@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Debugging you ML models"
-excerpt: debuggin ML models
+title:  "Debugging your ML models"
+excerpt: debugging ML models
 comments: true
 date:   2020-5-10 18:02:00 +0545
 categories: ML 
