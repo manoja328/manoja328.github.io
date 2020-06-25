@@ -1,0 +1,148 @@
+```
+---
+layout: post
+title:  "CVPR 2020 papers "
+excerpt: CVPR 2020 papers i liked
+comments: true
+date:   2020-06-25 13:26:37 +0545
+categories: ML 
+---
+```
+
+- SuperGlue: Learning Feature Matching With Graph Neural Networks
+    
+    - http://cvpr20.com/event/superglue-learning-feature-matching-with-graph-neural-networks-2/
+    - key points matching can use any methods such as SIFT or superpoints
+    - Old methods use matching by  filtering  incorrect  using ratio test , mutual check etc. for RANSAC
+    - USE GNN with attention ( self and cross attention)
+    
+- Is self supervised always helpful ?
+    - http://cvpr20.com/event/how-useful-is-self-supervised-pretraining-for-visual-tasks-2/
+    - only when labels are huge
+        - then scratch is as good
+    
+- Rethinking Class-Balanced Methods for Long-Tailed Visual Recognition From a Domain Adaptation Perspective
+    - http://cvpr20.com/event/rethinking-class-balanced-methods-for-long-tailed-visual-recognition-from-a-domain-adaptation-perspective-2/
+    - long tailed from domain adaption perspective
+    - domain adaption: covariate shift of target
+    - conditinal distirbution of  p(x | tail classes) is different
+    - class balanced loss + learning to reweight ( meta learning )
+    - two states: first train like normal and second stage is a  meta learning where balanced set is used to learn   after that the final model is obtained
+    
+- CNN fake is easy to spot for now:
+    - http://cvpr20.com/event/cnn-generated-images-are-surprisingly-easy-to-spot-for-now2nd-time/
+    - new dataset introduced: CNN generate fakes which are generate using GANs , deepfakes etc.
+    - Can we make a universal detector ?
+    - train on  generated images from one method and test on all produced by other methods
+    - Average precision metric
+    - Results:
+        - Training done using with also additional  augmentations such as blur + jpeg aug
+        - Good on many but low performance on deep fake and super resolution
+    - BUT detection not easy for:
+        - if architecture changes e.g. non CNN model
+        - Deep fakes
+    
+- High freqency componnet help expalin the genrea -- Intersting
+    - http://cvpr20.com/event/high-frequency-component-helps-explain-the-generalization-of-convolutional-neural-networks/
+    - ![img](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fma7583%2FfuYgKj8zPD.png?alt=media&token=0fc424ff-464e-4e2e-a2ba-48ece35e7e82)
+    - DNN might be using HFC more than LFC
+    - Human mostly focus on LFC
+    
+- ETERNAL sunshine of the spotless net
+    - how to foget ... fisher noise added so that deletes unwanted knowledge
+    - do not need to retrain the network again
+    - http://cvpr20.com/event/eternal-sunshine-of-the-spotless-net-selective-forgetting-in-deep-networks/
+    
+- Revisiting knowledge distillation (KD)
+    - http://cvpr20.com/event/revisiting-knowledge-distillation-via-label-smoothing-regularization/
+    - KD is like a regularization
+    - Weak teacher also improves student perf
+    - Student can also improve teacher perf
+    - alanlogy between Label smoothing and KD
+        - KD = learned Label smoothing , LSR = ad-hoc KD with a virtual teacher
+    
+- Computing the Testing Error Without a Testing Set
+    
+    - http://cvpr20.com/event/computing-the-testing-error-without-a-testing-set2nd-time/
+    
+- Learning to forget for meta learning
+    - http://cvpr20.com/event/learning-to-forget-for-meta-learning/
+    - Key: task wise initialization strategy instead of general for MAML
+    - Three ways of doing meta learning:
+        - Metric based
+        - external memory ( MANN) = memory augment NN
+        - Optimization ( MAML )
+    - gradient conflict cause the optimization landscape to be:
+        - Sharper = harder to optimize , no generalization
+        - More conflict in last layers = as more task specific
+    - To selectively forget attenuate some weights
+        -  Magnitude of weights == learning
+    
+- Robust Learning Through Cross-Task Consistency
+    - http://cvpr20.com/event/robust-learning-through-cross-task-consistency/
+    - ![img](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fma7583%2FTlOSgm-fiH.png?alt=media&token=746c686b-ee13-4f77-8df1-03ff0f5bf7f4)
+    
+- ## Talks:
+    - Elizabeth Spelke + Jitendra Malik + Larry Zitnick ( recommend to watch all keynotes)
+        - http://mindsvsmachines.com/
+    - Jitendra Malik: Turing's Baby
+        - Symbols need to link to entities which is done by  perceptual and motor experiences or interactions
+        - Turing: instead of tyring to simulate adult mind simulate child brain
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fma7583%2FzrsNmtPGGj.png?alt=media&token=02982774-57e3-4945-99e8-586537a77a35)
+        - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fma7583%2FoZSpDevOVb.png?alt=media&token=5a503bd8-0f3c-46d6-9c09-e8c173aefaa9)
+        - Features of child six lessons:
+            - Mutli-modal
+            - Incremental: compostiinality
+            - Physical : act in the world
+            - Explore : explore vs exploit
+            - Social :  learn from others
+            - Piagget's  constructionism , lifelong ,active , cirriculum learning
+        - Imitation : learning by imitation from experts or learning by asking questions
+        - Use language : weak supervision
+        - Habitat : Embodied AI , AE2thor --> active perception
+        - Commonsense is not just facts is a collection of models
+            - Currently: Knowledge graphs for facts ( which is now .. VCR etc. )
+            - Need to build mental models
+        - Model free reinforcement learning doesnot work right now : need to go back
+        - Continual Learning :
+            - Just focussing on catastrophic forgetting
+        - Vision exits to enable action **not** just work on static datasets
+        - Learn from child development and do it in compositional way
+        - Why?  current methods:
+            - Do not generalize well
+            - Tasks are indepenedemt
+            - New model for every tasks
+        - Correct paradigm for vision :
+            - Vision = intermediate representation
+            - abstraction should be robust and support variety of donwstream tasks
+            - Generic and transferable
+            -  how to build ?
+                - previous   only in categories level eg. wordnet  categories . Now we  need tasks
+                - how to find related tasks : taskonomy ( amir zamir , cvpr 2018 best paper)
+                - Robust learning through cross-task consistency
+        - Curently in robotics:
+            - brittle
+            - sample inneficent
+            - retrain for each task
+            - Train in Mid level visual features space  instead of raw pixels
+Corl19 : learning to navigate using mid level visual priors
+            - If med level feature then you lose "end to end" feature  but might gain modularity 
+            - Small modules trained end-to-end then use that as modules for bigger tasks
+            - Maybe  fix feature loose performance  by asymptoting
+                - Solution/trick: do side fine-tuning
+        - Humans **are 2nd best at lots of tasks** we need systems that can do that now
+        - Connections  are pruned and not added ???
+        - Symbolic approaches:
+            - Premature symbolization is a failure
+            - Maybe not the right way since it gets additional constraint
+            - In image people used to operate on edges which did work well up to some extent
+        - In language : people went from symbolic to vectors that brought huge improvements
+            - Soft symbolism is better than hard coded
+                - Since hard fails on long tailed etc.
+        - Jitendra's aha moment:
+            - SGD works with over parameterized model with non-convex optimization
+            - Language works best when sub symbolic
+        - **Advice for junior researchers:**
+            - Keep a portfolio of projects:  20% success, 80% success : diversify as in stocks
+                - Stage: vague ( can talk over beer with friends )
+                - Stage: more advanced / concrete ideas (to tell to grad students to work on)
