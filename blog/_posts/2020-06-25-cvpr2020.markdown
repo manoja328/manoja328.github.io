@@ -1,13 +1,11 @@
-```
 ---
 layout: post
-title:  "CVPR 2020 papers "
+title:  "Some CVPR 2020 Papers I liked"
 excerpt: CVPR 2020 papers i liked
 comments: true
 date:   2020-06-25 13:26:37 +0545
 categories: ML 
 ---
-```
 
 - SuperGlue: Learning Feature Matching With Graph Neural Networks
     
