@@ -1,8 +1,10 @@
+
 <html>
 <head>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,500,700|Crete+Round" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="style.css">
+<script src="hidebib.js" type="text/javascript"></script>
 <link href="academicons.css" rel="stylesheet">    
 <meta charset="UTF-8">
 </head>
@@ -55,40 +57,141 @@ diverse backgrounds and share ideas on how AI in general can be used for more go
 <strong>Nov 2018:</strong> TallyQA won the <b>best poster award</b> in the annual RIT Graduate Showcase!! <br>
 <strong>Nov 2018:</strong> Our paper is accepted to AAAI 2019. (acceptance rate ~16%) <br>
 <strong>July 2017:</strong> Started working at <a href="http://klab.cis.rit.edu/"> Klab </a> under Dr. Christopher Kanan.<br>  
-<strong>July 2017:</strong> Passed the Imaging science PhD qualifying exam.      
-    
-<h2>Publications</h2>
-<ul>
-    <li><p>         
-        REMIND Your Neural Network to Prevent Catastrophic Forgetting. <br>
-        <i>Tyler L. Hayes*, Kushal Kafle*, Robik Shrestha*, <u>Manoj Acharya</u>, and Christopher Kanan</i><br>
-        ECCV 2020<br>
-        <a href="https://arxiv.org/abs/1910.02509"> [paper]</a>    
-        <a href="https://github.com/tyler-hayes/REMIND"> [code]</a> 
-    </p></li>     
-   <li><p>         
-        RITnet: Real-time Semantic Segmentation of the Eye for Gaze Tracking. <br>
-        <i>Aayush Chaudhary*, Rakshit Kothari*,<u>Manoj Acharya*</u>, Shusil Dangi, Nitinraj Nair, Reynold Bailey, Christopher Kanan ,Gabriel Diaz, Jeff Pelz</i> <br>
-        ICCVW 2019 <a style="color:red">(Competition Winner)</a> <br>
-        <a href="https://arxiv.org/abs/1910.00694v1"> [paper]</a>      
-        <a href="https://bitbucket.org/eye-ush/ritnet/"> [code]</a> 
-    </p></li>     
-    <li><p>         
-        VQD: Visual Query Detection in Natural Scenes. <br>
-        <i><u>Manoj Acharya</u> , Karan Jariwala, Christopher Kanan</i> <br>
-        NAACL 2019<br>
-        <a href="https://arxiv.org/abs/1904.02794"> [paper]</a>      
-        <a href="vqd"> [project]</a> 
-    </p></li>    
-    <li><p>         
-        TallyQA: Answering Complex Counting Questions. <br>
-        <i><u>Manoj Acharya</u> , Kushal Kafle, Christopher Kanan</i> <br>
-        AAAI 2019 <a style="color:red">(Spotlight Presentation)</a> <br>
-        <a href="https://arxiv.org/abs/1810.12440"> [paper]</a>
-        <a href="tallyqa.html"> [project]</a> 
-        <a href="https://github.com/manoja328/tallyqacode"> [code]</a> 
-    </p></li>    
-</ul>    
+<strong>July 2017:</strong> Passed the Imaging science PhD qualifying exam.    
+ 
+<h2>Publications</h2>   
+
+<table cellpadding="10" width="100%" align="center" border="0">
+    <tbody>
+        <tr>
+          <td width="30%" valign="top">
+            <img src="https://github.com/tyler-hayes/REMIND/raw/master/repo_images/REMIND_model.png" style="border-style: none" width="100%">
+          </td>
+          <td width="70%" valign="top">
+            <a href="https://arxiv.org/abs/1910.02509"> REMIND Your Neural Network to Prevent Catastrophic Forgetting.</a><br>
+            Tyler L. Hayes*, Kushal Kafle*, Robik Shrestha*, <strong>Manoj Acharya</strong>, and Christopher Kanan<br>
+            ECCV 2020 <br>
+            <div class="paper" id="remind">
+                <a href="javascript:toggleblock('remind_abs')">abstract</a> / 
+                <a href="javascript:toggleblock('remind_bib')">bibtex</a> / 
+                <a href="https://github.com/tyler-hayes/REMIND">code</a>
+                <p align="justify">
+                    <i id="remind_abs" style="display: none;">People learn throughout life. However, incrementally updating conventional neural networks leads to catastrophic forgetting. A common remedy is replay, which is inspired by how the brain consolidates memory. Replay involves fine-tuning a network on a mixture of new and old instances. While there is neuroscientific evidence that the brain replays compressed memories, existing methods for convolutional networks replay raw images. Here, we propose REMIND, a brain-inspired approach that enables efficient replay with compressed representations. REMIND is trained in an online manner, meaning it learns one example at a time, which is closer to how humans learn. Under the same constraints, REMIND outperforms other methods for incremental class learning on the ImageNet ILSVRC-2012 dataset. We probe REMIND's robustness to data ordering schemes known to induce catastrophic forgetting. We demonstrate REMIND's generality by pioneering online learning for Visual Question Answering (VQA).</i>
+                </p>
+                <bibtext id="remind_bib" style="display: none;">
+                    <p>
+                        @article{hayes2019remind,
+                          title={REMIND Your Neural Network to Prevent Catastrophic Forgetting},
+                          author={Hayes, Tyler L and Kafle, Kushal and Shrestha, Robik and Acharya, Manoj and Kanan, Christopher},
+                          journal={arXiv preprint arXiv:1910.02509},
+                          year={2019}
+                        }
+                        </p>
+                </bibtext>
+            </div>
+        </td>
+    </tr>
+
+
+
+
+<tr>
+          <td width="30%" valign="top">
+            <img src="https://raw.githubusercontent.com/manoja328/manoja328.github.io/master/assets/ritnet.png" style="border-style: none" width="100%">
+          </td>
+          <td width="70%" valign="top">
+            <a href="https://arxiv.org/abs/1910.00694v1"> RITnet: Real-time Semantic Segmentation of the Eye for Gaze Tracking.</a><br>
+            Aayush Chaudhary*, Rakshit Kothari*,<strong>Manoj Acharya*</strong>, Shusil Dangi, Nitinraj Nair, Reynold Bailey, Christopher Kanan ,Gabriel Diaz, Jeff Pelz<br>
+            ICCVW 2019 <a style="color:red">(Competition Winner)</a> <br>
+            <div class="paper" id="tallyqa">
+                <a href="javascript:toggleblock('ritnet_abs')">abstract</a> / 
+                <a href="javascript:toggleblock('ritnet_bib')">bibtex</a> / 
+                <a href="https://bitbucket.org/eye-ush/ritnet/">code</a>
+                <p align="justify"><i id="ritnet_abs" style="display: none;">Accurate eye segmentation can improve eye-gaze estimation and support interactive computing based on visual attention; however, existing eye segmentation methods suffer from issues such as person-dependent accuracy, lack of robustness, and an inability to be run in real-time. Here, we present the RITnet model, which is a deep neural network that combines U-Net and DenseNet. RITnet is under 1 MB and achieves 95.3% accuracy on the 2019 OpenEDS Semantic Segmentation challenge. Using a GeForce GTX 1080 Ti, RITnet tracks at > 300Hz, enabling real-time gaze tracking applications. Pre-trained models and source code are available this <a href="https://bitbucket.org/eye-ush/ritnet/">https URL.</a></i>
+                </p>
+                <bibtext id="ritnet_bib" style="display: none;">
+                    <p>
+                       @inproceedings{chaudhary2019ritnet,
+                          title={RITnet: real-time semantic segmentation of the eye for gaze tracking},
+                          author={Chaudhary, Aayush K and Kothari, Rakshit and Acharya, Manoj and Dangi, Shusil and Nair, Nitinraj and Bailey, Reynold and Kanan, Christopher and Diaz, Gabriel and Pelz, Jeff B},
+                          booktitle={2019 IEEE/CVF International Conference on Computer Vision Workshop (ICCVW)},
+                          pages={3698--3702},
+                          year={2019},
+                          organization={IEEE}
+                        }
+                    </p>
+                </bibtext>
+            </div>
+        </td>
+    </tr>
+
+   
+
+<tr>
+          <td width="30%" valign="top">
+            <img src="https://raw.githubusercontent.com/manoja328/manoja328.github.io/master/assets/vqd.png" style="border-style: none" width="100%">
+          </td>
+          <td width="70%" valign="top">
+            <a href="https://arxiv.org/abs/1904.02794">VQD: Visual Query Detection in Natural Scenes.</a><br>
+            <strong>Manoj Acharya</strong> , Karan Jariwala, Christopher Kanan<br>
+            NAACL 2019<br>
+            <div class="paper" id="tallyqa">
+                <a href="javascript:toggleblock('vqd_abs')">abstract</a> / 
+                <a href="javascript:toggleblock('vqd_bib')">bibtex</a> / 
+                <a href="https://www.manojacharya.com/vqd/"> website</a>
+                <p align="justify">
+                    <i id="vqd_abs" style="display: none;">We propose Visual Query Detection (VQD), a new visual grounding task. In VQD, a system is guided by natural language to localize a variable number of objects in an image. VQD is related to visual referring expression recognition, where the task is to localize only one object. We describe the first dataset for VQD and we propose baseline algorithms that demonstrate the difficulty of the task compared to referring expression recognition.</i>
+                </p>
+                <bibtext id="vqd_bib" style="display: none;">
+                    <p>
+                        @article{acharya2019vqd,
+                          title={VQD: Visual query detection in natural scenes},
+                          author={Acharya, Manoj and Jariwala, Karan and Kanan, Christopher},
+                          journal={arXiv preprint arXiv:1904.02794},
+                          year={2019}
+                        }
+                    </p>
+                </bibtext>
+            </div>
+        </td>
+    </tr>
+
+    <tr>
+          <td width="30%" valign="top">
+            <img src="https://kushalkafle.com/images/tallyqa.png" style="border-style: none" width="100%">
+          </td>
+          <td width="70%" valign="top">
+            <a href="https://arxiv.org/abs/1810.12440">TallyQA: Answering Complex Counting Questions.</a><br>
+            <strong>Manoj Acharya</strong> , Kushal Kafle, Christopher Kanan<br>
+            AAAI 2019 <a style="color:red">(Spotlight Presentation)</a> <br>
+            <div class="paper" id="tallyqa">
+                <a href="javascript:toggleblock('tallyqa_abs')">abstract</a> / 
+                <a href="javascript:toggleblock('tallyqa_bib')">bibtex</a> / 
+                <a href="tallyqa.html"> website</a> / 
+                <a href="https://github.com/manoja328/tallyqacode">code</a>
+                <p align="justify">
+                    <i id="tallyqa_abs" style="display: none;">Most counting questions in visual question answering (VQA) datasets are simple and require no more than object detection. Here, we study algorithms for complex counting questions that involve relationships between objects, attribute identification, reasoning, and more. To do this, we created TallyQA, the world's largest dataset for open-ended counting. We propose a new algorithm for counting that uses relation networks with region proposals. Our method lets relation networks be efficiently used with high-resolution imagery. It yields state-of-the-art results compared to baseline and recent systems on both TallyQA and the HowMany-QA benchmark.</i>
+                </p>
+                <bibtext id="tallyqa_bib" style="display: none;">
+                    <p>
+                        @inproceedings{acharya2019tallyqa,
+                          title={TallyQA: Answering complex counting questions},
+                          author={Acharya, Manoj and Kafle, Kushal and Kanan, Christopher},
+                          booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+                          volume={33},
+                          pages={8076--8084},
+                          year={2019}
+                        }
+                    </p>
+                </bibtext>
+            </div>
+        </td>
+    </tr>
+   
+                 
+           
+    </tbody>
+</table>
 
 </body>
 </html>
