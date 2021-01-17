@@ -11,7 +11,7 @@ If you are like me who does  Machine Learning  using a think client laptop then 
 Pycharm is a relatively well built IDE for python programming.  Also, I found that their debugging experience is much better than  other python IDEs. I recently found out that they also had support for remote programming. I decided to try it and so far I have found it to be reasonably good. Here, I want to share my steps for setting it up in Pycharm.
 
 - First you need to create a new project and select  the remote ssh interpreter as the option. Also select the remote project location.
-  ![image-20200901162756884](/Users/manojacharya/Library/Application Support/typora-user-images/image-20200901162756884.png)
+  ![image-20200901162756884](/assets/image-20200901162756884.png)
 
 - Then go to Tools -> Deployment -> Configuration and setup:
 
@@ -22,10 +22,10 @@ Pycharm is a relatively well built IDE for python programming.  Also, I found th
     - Local path: `<folder on your laptop>`
     - Deployment path: /
 
-    ![image-20200907180811374](/Users/manojacharya/Library/Application Support/typora-user-images/image-20200907180811374.png)
+    ![image-20200907180811374](/assets/image-20200907180811374.png)
 
 - Also in Tools -> Configuration set it to upload only when `Windows + S` is pressed. 
-  ![image-20200901163246462](/Users/manojacharya/Library/Application Support/typora-user-images/image-20200901163246462.png)
+  ![image-20200901163246462](/assets/image-20200901163246462.png)
 
 **Note: You can make multiple configurations for the same project  and easily deploy the same project on any remote machine.**
 
@@ -33,7 +33,7 @@ With this, I can run  code in my remote machine with files available  in  both t
 
 Now my final setup looks like this: 
 
-![image-20200901165201491](/Users/manojacharya/Library/Application Support/typora-user-images/image-20200901165201491.png)
+![image-20200901165201491](/assets/image-20200901165201491.png)
 
 ​				[ The left file explorer is for my local folder and the right one for remote machine]
 
@@ -43,13 +43,13 @@ Now my final setup looks like this:
 
 Pycharm for some reason  complains with the error message saying *remote deployment  settings for remote debugger not found*. You can fix that by adding path mappings  from project  interpreter settings tab.
 
-![image-20200907181156083](/Users/manojacharya/Library/Application Support/typora-user-images/image-20200907181156083.png)
+![image-20200907181156083](/assets/image-20200907181156083.png)
 
 
 
 A word of warning, if you are tryin to debug in pycharm then rather than always showing all the variables only show the variables you need to watch.
 
-![image-20210116224926023](/Users/manojacharya/Library/Application Support/typora-user-images/image-20210116224926023.png)
+![image-20210116224926023](/assets/image-20210116224926023.png)
 
 
 
