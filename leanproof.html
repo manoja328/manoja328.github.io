@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Linear Independence of Eigenvectors</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #fdfdfd; padding: 40px; line-height: 1.6; }
+    h1 { text-align: center; margin-bottom: 30px; }
+    .container { display: flex; gap: 40px; max-width: 1200px; margin: auto; }
+    .proof-block { flex: 1; }
+    .proof-block h2 { text-align: center; margin-bottom: 20px; }
+    .proof-line { display: block; background: #282c34; color: #61dafb; border: none; padding: 12px 20px; margin: 10px 0; text-align: left; font-family: monospace; cursor: pointer; border-radius: 5px; position: relative; width: 100%; box-sizing: border-box; }
+    .proof-line::before { content: attr(data-line) "."; position: absolute; left: 10px; color: #ffffffaa; }
+
+    .highlight {
+      background: #fff3cd;
+      border-left: 6px solid #ffc107;
+      padding: 10px 15px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+
+    .highlight-pink {
+      background: #fde2e2;
+      border-left: 6px solid #ff4d6d;
+      padding: 10px 15px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+
+    .proof-line .content { margin-left: 30px; }
+    .proof-line.no-num { padding-left: 20px; }
+    .proof-line.no-num::before { content: ''; }
+    .explanation { display: none; background: #f0f0f0; color: #333; padding: 10px 15px; border-left: 4px solid #61dafb; margin-bottom: 15px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h1>📘 Anatomy of a Formal Proof: Linear Independence of Eigenvectors</h1>
+  <p><a href="https://arxiv.org/abs/2411.11885" target="_blank" style="color: #2a7ae2;">Read on arXiv →</a></p>
+
+    <div class="highlight">
+      Goal: If <code>x</code> and <code>y</code> are eigenvectors of <code>f</code> with distinct eigenvalues,
+      they are linearly independent.
+    </div>
+    <div class="highlight-pink">
+      Formally, if <code>x</code> and <code>y</code> are nonzero elements of a vector space <code>V</code> and <code>f : V → V</code> is a linear map. Given that <code>f(x) = μx</code> and <code>f(y) = νy</code> with <code>μ ≠ ν</code>, and <code>x, y ≠ 0</code>, prove that the only solution to <code>ax + by = 0</code> is <code>a = b = 0</code>.
+    </div>
+
+
+  <div class="container">
+
+
+
+    <div class="proof-block informal">
+      <h2>Informal Proof</h2>
+      <button class="proof-line no-num"><span class="content">Let f(x) = μx and f(y) = νy with μ ≠ ν.</span></button>
+      <div class="explanation">x and y are eigenvectors with distinct eigenvalues.</div>
+      <button class="proof-line no-num"><span class="content">Suppose a x + b y = 0.</span></button>
+      <div class="explanation">Assume a linear relation exists.</div>
+      <button class="proof-line no-num"><span class="content">Apply f: f(a x + b y) = f(0).</span></button>
+      <div class="explanation">Use linearity and f(0)=0.</div>
+      <button class="proof-line no-num"><span class="content">By linearity, μ a x + ν b y = 0.</span></button>
+      <div class="explanation">Substitute eigen equations.</div>
+      <button class="proof-line no-num"><span class="content">Multiply original by ν: ν a x + ν b y = 0.</span></button>
+      <div class="explanation">Scale the original relation.</div>
+      <button class="proof-line no-num"><span class="content">Subtract to eliminate b-term.</span></button>
+      <div class="explanation">(μ−ν)a x=0.</div>
+      <button class="proof-line no-num"><span class="content">Since μ≠ν and x≠0, a=0.</span></button>
+      <div class="explanation">Only zero scalar yields zero vector.</div>
+      <button class="proof-line no-num"><span class="content">Plug in a=0: b y = 0.</span></button>
+      <div class="explanation">Substitute back.</div>
+      <button class="proof-line no-num"><span class="content">Since y≠0, b=0.</span></button>
+      <div class="explanation">Conclude trivial relation.</div>
+    </div>
+    <div class="proof-block formal">
+      <h2>Formal Lean Proof</h2>
+      <button class="proof-line" data-line="1"><span class="content">import Mathlib.LinearAlgebra.LinearIndependent</span></button>
+      <div class="explanation">Bring in Lean’s library for linear independence handling.</div>
+      <button class="proof-line" data-line="2"><span class="content">variable [Field K] [AddCommGroup V] [Module K V]</span></button>
+      <div class="explanation">Declare K as a field and V as a K-module (vector space).</div>
+      <button class="proof-line" data-line="3"><span class="content">example (f : V →ₗ[K] V)
+    (μ ν : K) (hμν : μ ≠ ν)
+    (x y : V) (hx₀ : x ≠ 0) (hy₀ : y ≠ 0)
+    (hx : f x = μ • x) (hy : f y = ν • y) :</span></button>
+      <div class="explanation">the keyword example indicates that the result you are proving is not intended for future use. Using example is good for experimentation. To prove a lemma or theorem that you intend to use later, you would instead use lemma or theorem and provide a name. Introduce linear map f, distinct eigenvalues μ, ν, and nonzero eigenvectors x, y.</div>
+      <button class="proof-line" data-line="4"><span class="content">∀ a b : K,
+      a • x + b • y = 0 → a = 0 ∧ b = 0 := by</span></button>
+      <div class="explanation">Set goal: show any combination yielding zero must have trivial scalars.</div>
+      <button class="proof-line" data-line="5"><span class="content">intro a b hab</span></button>
+      <div class="explanation">Introduce two variables a: K and b: K which your statement quantifies over, as well as the antecedent of the implication, that is, theassumptionhab : a · x + b · y = 0.</div>
+      <button class="proof-line" data-line="6"><span class="content">have :=</span></button>
+      <div class="explanation">This introduces a calculation, similar to a \begin{align*} ... \end{align*} block in LATEX. The keyword by after the := instructs Lean to enter tactic mode, which means that the text that follows should be interpreted as a list of instructions that tell Lean how to build the required proof.</div>
+      <button class="proof-line" data-line="7"><span class="content">  calc (μ - ν) • a • x
+      = (a • μ • x + b • ν • y) -
+        ν • (a • x + b • y) := by module</span></button>
+      <div class="explanation">Use `by module` to expand and regroup scalar multiplication and addition.</div>
+      <button class="proof-line" data-line="8"><span class="content">    _ = f (a • x + b • y) -
+        ν • (a • x + b • y) := by simp [hx, hy]</span></button>
+      <div class="explanation">Apply eigenvector hypotheses to rewrite terms in f.</div>
+      <button class="proof-line" data-line="9"><span class="content">    _ = 0 := by simp [hab]</span></button>
+      <div class="explanation">Use the assumption a•x + b•y = 0 to simplify to zero.</div>
+      <button class="proof-line" data-line="10"><span class="content">simp_all [sub_eq_zero]</span></button>
+      <div class="explanation">`simp_all` handles both (μ - ν) • a = 0 (giving a=0 since μ≠ν) and then deduces b=0.</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    document.querySelectorAll('.proof-line').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const exp = btn.nextElementSibling;
+        exp.style.display = exp.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+  </script>
+</body>
+</html>
