@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lean Proof: Linear Independence of Eigenvectors</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fdfdfd;
+      padding: 40px;
+      line-height: 1.6;
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .highlight {
+      background: #fff3cd;
+      border-left: 6px solid #ffc107;
+      padding: 10px 15px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+
+    .highlight-pink {
+      background: #fde2e2;
+      border-left: 6px solid #ff4d6d;
+      padding: 10px 15px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+
+    .proof-line {
+      background: #282c34;
+      color: #61dafb;
+      border: none;
+      padding: 10px 15px;
+      margin: 5px 0;
+      width: 100%;
+      text-align: left;
+      font-family: monospace;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .explanation {
+      display: none;
+      background: #f0f0f0;
+      color: #333;
+      padding: 10px 15px;
+      border-left: 4px solid #61dafb;
+      margin-bottom: 15px;
+      border-radius: 4px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Lean Proof: Linear Independence of Eigenvectors</h1>
+
+  <div class="container">
+    <h2>📌 Goal We’re Trying to Prove</h2>
+    <div class="highlight">
+      Since <code>x</code> and <code>y</code> are eigenvectors of <code>f</code> with distinct eigenvalues,
+      they are linearly independent.
+    </div>
+    <div class="highlight-pink">
+      Here <code>x</code> and <code>y</code> are nonzero elements of a vector space <code>V</code> and <code>f : V → V</code> is a linear map. Given that <code>f(x) = μx</code> and <code>f(y) = νy</code> with <code>μ ≠ ν</code>, and <code>x, y ≠ 0</code>, prove that the only solution to <code>ax + by = 0</code> is <code>a = b = 0</code>.
+    </div>
+
+    <h2>✍️ Informal (Pen-and-Paper) Proof</h2>
+
+    <button class="proof-line" data-line="1">Let f(x) = μx and f(y) = νy with μ ≠ ν.</button>
+    <div class="explanation">This gives us the setup: x and y are eigenvectors with distinct eigenvalues.</div>
+
+    <button class="proof-line" data-line="2">Suppose ax + by = 0.</button>
+    <div class="explanation">Assume a linear dependence between x and y to derive a contradiction.</div>
+
+    <button class="proof-line" data-line="3">Applying f and using linearity, we have μa x + νb y = 0.</button>
+    <div class="explanation">Apply the linear map f to both sides and use linearity of f.</div>
+
+    <button class="proof-line" data-line="4">Multiplying the original equation by ν, we get νa x + νb y = 0.</button>
+    <div class="explanation">Multiply the original equation to align terms for subtraction.</div>
+
+    <button class="proof-line" data-line="5">Subtracting the two yields (μ − ν) a x = 0.</button>
+    <div class="explanation">Subtract the equations to eliminate by terms.</div>
+
+    <button class="proof-line" data-line="6">Since μ − ν ≠ 0 and x ≠ 0, we conclude a = 0.</button>
+    <div class="explanation">The only way this product is zero is if a = 0.</div>
+
+    <button class="proof-line" data-line="7">Swap x and y to similarly conclude b = 0.</button>
+    <div class="explanation">Repeat the same argument to show b = 0. Hence x and y are linearly independent.</div>
+
+    <h2>📐 Formal Lean Proof</h2>
+
+    <button class="proof-line">import Mathlib.LinearAlgebra.LinearIndependent</button>
+    <div class="explanation">Import Lean's math library on linear independence.</div>
+
+    <button class="proof-line">variable [Field K] [AddCommGroup V] [Module K V]</button>
+    <div class="explanation">Declare the scalar field <code>K</code> and vector space <code>V</code>.</div>
+
+    <button class="proof-line">example (f : V →ₗ[K] V)</button>
+    <div class="explanation">We define <code>f</code> to be a linear map from <code>V</code> to <code>V</code> over <code>K</code>.</div>
+
+    <button class="proof-line">(μ ν : K) (hμν : μ ≠ ν)</button>
+    <div class="explanation">μ and ν are distinct scalars — eigenvalues of f.</div>
+
+    <button class="proof-line">(x y : V) (hx0 : x ≠ 0) (hy0 : y ≠ 0)</button>
+    <div class="explanation">x and y are nonzero vectors in V.</div>
+
+    <button class="proof-line">(hx : f x = μ • x) (hy : f y = ν • y) :</button>
+    <div class="explanation">x and y are eigenvectors corresponding to μ and ν.</div>
+
+    <button class="proof-line">∀ a b : K, a • x + b • y = 0 → a = 0 ∧ b = 0 := by</button>
+    <div class="explanation">Goal: the only linear combination of x and y that gives 0 is trivial — so they are linearly independent.</div>
+
+    <button class="proof-line">intro a b hab</button>
+    <div class="explanation">Assume a linear combination <code>a • x + b • y = 0</code>.</div>
+
+    <button class="proof-line">have := calc</button>
+    <div class="explanation">Begin the calculation proof chain using Lean's <code>calc</code> notation.</div>
+
+    <button class="proof-line">(μ - ν) • a • x</button>
+    <div class="explanation">We want to isolate <code>a • x</code> using eigenvalue difference.</div>
+
+    <button class="proof-line">= f (a • x + b • y) - ν • (a • x + b • y)</button>
+    <div class="explanation">Apply <code>f</code> using linearity and rearrange terms.</div>
+
+    <button class="proof-line">= 0 - 0 := by simp [hx, hy, hab]</button>
+    <div class="explanation">Using our assumptions, both expressions are 0 — hence <code>(μ - ν) • a • x = 0</code>.</div>
+
+    <button class="proof-line">= 0 := by simp</button>
+    <div class="explanation">This confirms <code>(μ - ν) • a = 0</code. Since <code>μ ≠ ν</code>, <code>a = 0</code>.</div>
+
+    <button class="proof-line">simp_all [sub_eq_zero]</button>
+    <div class="explanation">Finally, <code>b = 0</code> from the original linear combination assumption. Proof complete.</div>
+
+  </div>
+
+  <script>
+    const lines = document.querySelectorAll('.proof-line');
+    lines.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const explanation = btn.nextElementSibling;
+        explanation.style.display = (explanation.style.display === 'block') ? 'none' : 'block';
+      });
+    });
+  </script>
+
+</body>
+</html>
