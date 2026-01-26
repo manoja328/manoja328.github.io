@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PP-ICL | Privacy Preserving In-Context Learning</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --bg-color: #ffffff;
+            --text-color: #1f2937;
+            --light-bg: #f3f4f6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 1rem 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo { font-weight: bold; font-size: 1.5rem; color: var(--primary-color); }
+        .nav-links a { text-decoration: none; color: var(--text-color); margin-left: 2rem; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--primary-color); }
+
+        /* Hero Section */
+        header {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 4rem 10%;
+            text-align: center;
+        }
+
+        h1 { font-size: 2.5rem; margin-bottom: 1rem; color: #0f172a; }
+        .authors { margin-bottom: 2rem; color: #475569; font-style: italic; }
+
+
+.btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            margin: 0.25rem;
+        }
+        .btn-outline { background: transparent; border: 1px solid var(--primary-color); color: var(--primary-color); }
+
+        /* Sections - Reduced Padding */
+        section { padding: 2rem 10%; border-bottom: 1px solid var(--border-color); }
+        .section-title { font-size: 1.5rem; margin-top: 0; margin-bottom: 1rem; color: #0f172a; }
+
+/* Feature Grid - More Compact */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+.feature-card {
+            background: var(--light-bg);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        .feature-card:hover { transform: translateY(-5px); }
+
+        /* BibTeX Area */
+        pre {
+            background: #1e293b;
+            color: #f1f5f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            nav { flex-direction: column; }
+            .nav-links { margin-top: 1rem; }
+            .nav-links a { margin: 0 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">PP-ICL</div>
+    <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#code">Code</a>
+        <a href="#cite">Cite</a>
+    </div>
+</nav>
+
+<header>
+    <h1>Privacy Preserving In-Context-Learning Framework for LLMs</h1>
+    <p class="authors">Bishnu Bhusal, Manoj Acharya, Ramneet Kaur, Colin Samplawski, Anirban Roy, Adam D. Cobb, Rohit Chadha, Susmit Jha</p>
+    <div class="header-buttons">
+        <a href="https://arxiv.org/abs/2509.13625v4" class="btn" target="_blank"><i class="far fa-file-pdf"></i> Read Paper</a>
+        <a href="https://github.com/bhusalb/privacy-preserving-icl" class="btn btn-outline" target="_blank"><i class="fab fa-github"></i> View GitHub</a>
+    </div>
+</header>
+
+<section id="about">
+    <h2 class="section-title">Overview</h2>
+    <p>
+        The <strong>Privacy-Preserving In-Context Learning (PP-ICL)</strong> framework addresses the critical challenge of 
+        using Large Language Models (LLMs) with sensitive data. Unlike traditional methods that require 
+        computationally expensive fine-tuning (like DP-SGD), PP-ICL generates high-utility synthetic data 
+        directly through private inference.
+    </p>
+    <p>
+        Our method utilizes a <strong>private prediction aggregation strategy</strong> that provides strong 
+        Differential Privacy (DP) guarantees while maintaining the semantic quality of the generated text, 
+        making it suitable for downstream training and analysis.
+    </p>
+</section>
+
+
+
+<section id="features" style="background-color: #f8fafc;">
+    <h2 class="section-title">Key Advantages</h2>
+    <div class="features">
+        <div class="feature-card">
+            <h3><i class="fas fa-bolt" style="color: #eab308;"></i> Zero Fine-Tuning</h3>
+            <p>Achieve privacy without modifying model weights or re-training, significantly reducing GPU costs.</p>
+        </div>
+        <div class="feature-card">
+            <h3><i class="fas fa-shield-alt" style="color: #22c55e;"></i> DP Guarantees</h3>
+            <p>Worst-case theoretical privacy bounds ensure that individual data points remain protected.</p>
+        </div>
+        <div class="feature-card">
+            <h3><i class="fas fa-chart-line" style="color: #3b82f6;"></i> High Utility</h3>
+            <p>Outperforms existing baseline methods on benchmark tasks including classification and text generation.</p>
+        </div>
+    </div>
+</section>
+
+<section id="cite">
+    <h2 class="section-title">Citation</h2>
+    <p>If you find this work useful in your research, please cite it using the following BibTeX:</p>
+    <pre>
+@article{bhusal2025privacy,
+  title={Privacy Preserving In-Context-Learning Framework for Large Language Models},
+  author={Bhusal, Bishnu and Acharya, Manoj and Kaur, Ramneet and others},
+  journal={AAAI},
+  year={2026}
+}</pre>
+</section>
+
+
+</body>
+</html>
